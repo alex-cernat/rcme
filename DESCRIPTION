@@ -1,10 +1,17 @@
 Package: rcme
-Title: What the Package Does (One Line, Title Case)
+Title: Recounting Crime Measurement Error
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Jose", "Pina-Sánchez", "J.PinaSanchez@leeds.ac.uk", role = "aut",
+           comment = c(ORCID = "0000-0002-9416-6022")),
+    person("Alexandru", "Cernat", , "alexandru.cernat@manchester.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2176-1215 ")),
+    person("Ian", "Brunton-Smith", "I.R.Brunton-Smith@surrey.ac.uk", role = "aut",
+           comment = c(ORCID = "0000-0002-0077-5602 ")),
+    person("David", "Buil-Gil", "david.builgil@manchester.ac.uk", role = "aut",
+           comment = c(ORCID = "0000-0002-7549-6317 "))
+  )
+Description: The package helps run simulations to estimate the impact of measurement error on crime estimates.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -17,7 +24,7 @@ Imports:
     purrr,
     stringr
 Depends: 
-    R (>= 2.10)
+    R (>= 4.00)
 LazyData: true
 URL: https://github.com/alex-cernat/rcme
 BugReports: https://github.com/alex-cernat/rcme/issues
