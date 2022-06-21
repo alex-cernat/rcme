@@ -20,7 +20,7 @@ rcme_sim_plot <- function(rcme_sim_range_object,
   # }
 
   # make plot
-  plot_data <- me_sim_range_object$sim_result %>%
+  plot_data <- rcme_sim_range_object$sim_result %>%
     dplyr::mutate(lci = key_predictor - (1.96 * SE),
            uci = key_predictor + (1.96 * SE))
 
