@@ -51,11 +51,11 @@ rcme_sim_plot <- function(rcme_sim_range_object,
 
   if (naive == T) {
 
-    naive_coefs <- me_sim_range_object$naive$coefficients
+    naive_coefs <- rcme_sim_range_object$naive$coefficients
     names(naive_coefs) <- stringr::str_remove_all(names(naive_coefs),
                                                   "log|\\(|\\)")
 
-    naive_est <- naive_coefs[me_sim_range_object$key_predictor]
+    naive_est <- naive_coefs[rcme_sim_range_object$key_predictor]
 
     naive_est_data <- data.frame(naive_est, R_sd = min(plot_data$R_sd))
 
