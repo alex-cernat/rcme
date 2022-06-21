@@ -22,11 +22,30 @@ library(tidyverse)
 library(roxygen2)
 library(knitr)
 
+# ignore the meta file in building the package
+usethis::use_build_ignore("./R/package_setup.R")
+usethis::use_git_ignore("./R/package_setup.R")
+
+
+
 # sets up git
 use_git()
 use_github()
 use_readme_rmd()
 build_readme()
+
+
+# load data
+load("C:/Users/msassac6/Dropbox (The University of Manchester)/Grants/Measurement error and crime - project/crime_me_package/crime_me_functions/data/clean_syn/sysdata.Rda")
+
+usethis::use_data(crime_damage, crime_damage, overwrite = T)
+usethis::use_data(crime_disorder, crime_disorder, overwrite = T)
+
+# make licence
+use_mit_license()
+
+# make documentation from metadata in each function
+document()
 
 # loads packages
 load_all()
@@ -34,11 +53,7 @@ load_all()
 # checks built
 check()
 
-# make licence
-use_mit_license()
 
-# make documentation from metadata in each function
-document()
 
 
 # install package in our library
@@ -65,17 +80,9 @@ use_package("dplyr")
 # sets up use of pipe
 use_pipe()
 
-# load data
-load("C:/Users/msassac6/Dropbox (The University of Manchester)/Grants/Measurement error and crime - project/crime_me_package/crime_me_functions/data/clean_syn/sysdata.Rda")
 
-usethis::use_data(crime_damage, crime_damage, overwrite = T)
-usethis::use_data(crime_disorder, crime_disorder, overwrite = T)
 
-usethis::export(crime_damage)
 
-# ignore the meta file in building the package
-usethis::use_build_ignore("meta.R")
-usethis::use_git_ignore("meta.R")
 
 # document again
 document()

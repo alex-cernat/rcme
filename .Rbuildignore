@@ -1,2 +1,5 @@
 ^rcme\.Rproj$
 ^\.Rproj\.user$
+^\./R/package_setup\.R$
+^README\.Rmd$
+^LICENSE\.md$
