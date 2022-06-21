@@ -9,10 +9,9 @@
 <!-- badges: end -->
 
 The goal of the rcme package is to support the sensitivity analysis of
-crime data to different types of measurement error. It is result of the
-[Recounting Crime Project](https://recountingcrime.com/). You can see
-the publications informing this work
-[here](https://recountingcrime.com/scientific-articles/).
+of regression models using crime rates affected by different types of measurement error. 
+It is result of the [Recounting Crime Project](https://recountingcrime.com/). You can see
+the publications informing this work [here](https://recountingcrime.com/scientific-articles/).
 
 ## Installation
 
