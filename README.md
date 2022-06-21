@@ -6,8 +6,11 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rcme is to support the sensitivity analysis of crime data to
-different types of measurement error.
+The goal of the rcme package is to support the sensitivity analysis of
+crime data to different types of measurement error. It is result of the
+[Recounting Crime Project](https://recountingcrime.com/). You can see
+the publications informing this work
+[here](https://recountingcrime.com/scientific-articles/).
 
 ## Installation
 
@@ -21,8 +24,11 @@ devtools::install_github("alex-cernat/rcme")
 
 ## Example
 
-This is a basic example which shows you how to get a corrected
-regression estimate when we assume ther
+This is a basic example which shows how to get a corrected regression
+estimate when we assume measurement error on the independent variable
+with a recordig rate (`S`) of 0.31, a standard deviation (`R_sd`) of
+0.12 and a correlation between the variable of interest and measurement
+error (`D`) of -0.1.
 
 ``` r
 rcme_ind(
@@ -54,10 +60,11 @@ rcme_ind(
 #> [1] "log_violent_crime"
 ```
 
-What is s
+It is possible to run the function over multiple scenarios as well as
+enable the function to log the variable of interest:
 
 ``` r
-me.1ex <- rcme_ind(
+rcme_ind(
   formula = "disorder ~ violent_crime + white_british + unemployment + median_age",
   data = crime_disorder,
   key_predictor = "violent_crime",
@@ -70,19 +77,17 @@ me.1ex <- rcme_ind(
 #> unemployment + median_age", : The correlation between measurement error in
 #> crime data and the key variable of interest is set to 0. Non-differentiality is
 #> assumed.
-
-me.1ex
 #> $sim_result
 #>      S R_sd D log_var key_predictor    SE
-#> 1 0.31 0.08 0    TRUE         0.237 0.121
-#> 2 0.67 0.08 0    TRUE         0.356 0.147
-#> 3 1.00 0.08 0    TRUE         0.390 0.154
-#> 4 0.31 0.10 0    TRUE         0.168 0.101
-#> 5 0.67 0.10 0    TRUE         0.336 0.143
+#> 1 0.31 0.08 0    TRUE         0.242 0.121
+#> 2 0.67 0.08 0    TRUE         0.355 0.147
+#> 3 1.00 0.08 0    TRUE         0.391 0.154
+#> 4 0.31 0.10 0    TRUE         0.167 0.101
+#> 5 0.67 0.10 0    TRUE         0.337 0.143
 #> 6 1.00 0.10 0    TRUE         0.386 0.153
-#> 7 0.31 0.12 0    TRUE         0.099 0.079
+#> 7 0.31 0.12 0    TRUE         0.106 0.078
 #> 8 0.67 0.12 0    TRUE         0.311 0.138
-#> 9 1.00 0.12 0    TRUE         0.380 0.152
+#> 9 1.00 0.12 0    TRUE         0.379 0.152
 #> 
 #> $naive
 #> 
@@ -102,8 +107,11 @@ me.1ex
 #> [1] "violent_crime"
 ```
 
+When measurement error is on the outcome you can use the `rcme_out()`
+function:
+
 ``` r
-me.2ex <- rcme_out(
+rcme_out_ex <- rcme_out(
   formula = "damage_crime ~ collective_efficacy + unemployment + white_british + median_age",
   data = crime_damage,
   key_predictor = "collective_efficacy",
@@ -119,7 +127,17 @@ You can also visualize the results of the simulations easily using
 `rcme_sim_plot()`:
 
 ``` r
-rcme_sim_plot(me.2ex, ci = T, naive = T)
+rcme_sim_plot(rcme_out_ex, ci = T, naive = T)
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+The result of this function is just a normal `ggplot2` object which can
+be changed and saved accordingly:
+
+``` r
+rcme_sim_plot(rcme_out_ex, ci = T, naive = T) +
+  ggplot2::theme_dark()
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />

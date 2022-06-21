@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rcme is to support the sensitivity analysis of crime data to different types of measurement error.
+The goal of the rcme package is to support the sensitivity analysis of crime data to different types of measurement error. It is result of the [Recounting Crime Project](https://recountingcrime.com/). You can see the publications informing this work [here](https://recountingcrime.com/scientific-articles/).
 
 ## Installation
 
@@ -33,8 +33,7 @@ devtools::install_github("alex-cernat/rcme")
 
 ## Example
 
-This is a basic example which shows you how to get a corrected regression estimate when we assume ther
-
+This is a basic example which shows how to get a corrected regression estimate when we assume measurement error on the independent variable with a recordig rate (`S`) of 0.31, a standard deviation (`R_sd`) of 0.12 and a correlation between the variable of interest and measurement error (`D`) of -0.1.  
 ```{r example}
 rcme_ind(
   formula = "disorder ~ log_violent_crime + white_british + unemployment + median_age",
@@ -45,9 +44,10 @@ rcme_ind(
   D = -0.1) 
 ```
 
-What is s
+It is possible to run the function over multiple scenarios as well as enable the function to log the variable of interest:
+
 ```{r}
-me.1ex <- rcme_ind(
+rcme_ind(
   formula = "disorder ~ violent_crime + white_british + unemployment + median_age",
   data = crime_disorder,
   key_predictor = "violent_crime",
@@ -55,13 +55,12 @@ me.1ex <- rcme_ind(
   R_sd = c(0.08, 0.10, 0.12),
   log_var = T) 
 
-me.1ex
 ```
 
+When measurement error is on the outcome you can use the `rcme_out()` function:
 
 ```{r}
-
-me.2ex <- rcme_out(
+rcme_out_ex <- rcme_out(
   formula = "damage_crime ~ collective_efficacy + unemployment + white_british + median_age",
   data = crime_damage,
   key_predictor = "collective_efficacy",
@@ -75,7 +74,13 @@ me.2ex <- rcme_out(
 You can also visualize the results of the simulations easily using `rcme_sim_plot()`:
 
 ```{r}
-rcme_sim_plot(me.2ex, ci = T, naive = T)
+rcme_sim_plot(rcme_out_ex, ci = T, naive = T)
 ```
 
+The result of this function is just a normal `ggplot2` object which can be changed and saved accordingly:
+
+```{r}
+rcme_sim_plot(rcme_out_ex, ci = T, naive = T) +
+  ggplot2::theme_dark()
+```
 
