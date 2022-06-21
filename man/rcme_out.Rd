@@ -2,13 +2,36 @@
 % Please edit documentation in R/rcme_out.R
 \name{rcme_out}
 \alias{rcme_out}
-\title{Title}
+\title{Function that simulates the effect of measurement error on the dependent variable.}
 \usage{
 rcme_out(formula, data, key_predictor, S = 1, R_sd = 0, D = 0, log_var = FALSE)
 }
 \arguments{
-\item{log_var}{}
+\item{formula}{Regression formula of interest}
+
+\item{data}{Data that will be used}
+
+\item{key_predictor}{The key independent variable of interest in the model. Only one variable can be used.}
+
+\item{S}{The magnitude of the systematic error component, included as a scalar contained within the (0,1). Users can input multiple values using c().}
+
+\item{R_sd}{The magnitude of the random errors, included as a value of the standard deviation, assumed to be normally distributed with a mean of zero. Users can input multiple values using c().}
+
+\item{D}{The magnitude of the correlation between the measurement error and the key variable of interest. Users can input multiple values using c().}
+
+\item{log_var}{Do you want the function to log the outcome? If log_var = TRUE users must remember that all sensitivity results will be presented on the log scale.}
 }
 \description{
-Title
+Function that simulates the effect of measurement error on the dependent variable.
+}
+\examples{
+rcme_out(
+  formula = "damage_crime ~ collective_efficacy + unemployment +
+  white_british + median_age",
+  data = crime_damage,
+  key_predictor = "collective_efficacy",
+  S = 0.29,
+  R_sd = 0.12,
+  D = -0.3,
+  log_var = T)
 }

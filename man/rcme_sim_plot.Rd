@@ -7,8 +7,25 @@
 rcme_sim_plot(rcme_sim_range_object, ci = TRUE, naive = TRUE)
 }
 \arguments{
-\item{naive}{}
+\item{rcme_sim_range_object}{Object saved by \code{rcme_ind()} or \code{rcme_out()} with multiple values.}
+
+\item{ci}{include confidence interval in the graph}
+
+\item{naive}{include naive estimate in the graph}
 }
 \description{
 Title
+}
+\examples{
+ex <- rcme_out(
+  formula = "damage_crime ~ collective_efficacy + unemployment +
+  white_british + median_age",
+  data = crime_damage,
+  key_predictor = "collective_efficacy",
+  S = c(0.29, 0.85, 1.0),
+  R_sd = c(0.08, 0.10, 0.12),
+  D = c(-0.3, -0.2, -0.1, 0),
+  log_var = T)
+
+rcme_sim_plot(ex)
 }

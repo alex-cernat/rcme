@@ -1,5 +1,5 @@
 # function for simulating ME when ME is on ind var.
-#' Title
+#' Plotting graphs for
 #'
 #' @param data
 #' @param outcome

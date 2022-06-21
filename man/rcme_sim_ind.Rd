@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcme_sim_ind.R
 \name{rcme_sim_ind}
 \alias{rcme_sim_ind}
-\title{Title}
+\title{Plotting graphs for}
 \usage{
 rcme_sim_ind(data, outcome, predictors, S, key_predictor, R_sd, D, log_var)
 }
@@ -10,5 +10,5 @@ rcme_sim_ind(data, outcome, predictors, S, key_predictor, R_sd, D, log_var)
 \item{log_var}{}
 }
 \description{
-Title
+Plotting graphs for
 }

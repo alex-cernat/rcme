@@ -1,19 +1,28 @@
 
 # function to run simulation for one situation
-#' Title
+#' Function that simulates the effect of measurement error on the dependent variable.
 #'
-#' @param formula
-#' @param data
-#' @param key_predictor
-#' @param S
-#' @param R_sd
-#' @param D
-#' @param log_var
+#' @param formula Regression formula of interest
+#' @param data Data that will be used
+#' @param key_predictor The key independent variable of interest in the model. Only one variable can be used.
+#' @param S The magnitude of the systematic error component, included as a scalar contained within the (0,1). Users can input multiple values using c().
+#' @param R_sd The magnitude of the random errors, included as a value of the standard deviation, assumed to be normally distributed with a mean of zero. Users can input multiple values using c().
+#' @param D The magnitude of the correlation between the measurement error and the key variable of interest. Users can input multiple values using c().
+#' @param log_var Do you want the function to log the outcome? If log_var = TRUE users must remember that all sensitivity results will be presented on the log scale.
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' rcme_out(
+#'   formula = "damage_crime ~ collective_efficacy + unemployment +
+#'   white_british + median_age",
+#'   data = crime_damage,
+#'   key_predictor = "collective_efficacy",
+#'   S = 0.29,
+#'   R_sd = 0.12,
+#'   D = -0.3,
+#'   log_var = T)
 rcme_out <- function(formula,
                       data,
                       key_predictor, # main predictor of interest

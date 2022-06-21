@@ -1,23 +1,27 @@
 #' Title
 #'
-#' @param rcme_sim_range_object
-#' @param ci
-#' @param naive
+#' @param rcme_sim_range_object Object saved by `rcme_ind()` or `rcme_out()` with multiple values.
+#' @param ci include confidence interval in the graph
+#' @param naive include naive estimate in the graph
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' ex <- rcme_out(
+#'   formula = "damage_crime ~ collective_efficacy + unemployment +
+#'   white_british + median_age",
+#'   data = crime_damage,
+#'   key_predictor = "collective_efficacy",
+#'   S = c(0.29, 0.85, 1.0),
+#'   R_sd = c(0.08, 0.10, 0.12),
+#'   D = c(-0.3, -0.2, -0.1, 0),
+#'   log_var = T)
+#'
+#' rcme_sim_plot(ex)
 rcme_sim_plot <- function(rcme_sim_range_object,
                           ci = TRUE,
                           naive = TRUE) {
-
-  # if (!is.logic(ci)) {
-  #   stop("`ci` must be logic")
-  # }
-  # if (!is.logic(naive)) {
-  #   stop("`naive` must be logic")
-  # }
 
   # make plot
   plot_data <- rcme_sim_range_object$sim_result %>%
