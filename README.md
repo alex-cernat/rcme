@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rcme - Recounting Crime Measurement Error <img src="man/figures/logo.png" align="right" />
+# rcme - Recounting Crime Measurement Error <img src="man/figures/logo-nobackground.png" align="right" />
 
 <!-- badges: start -->
 
