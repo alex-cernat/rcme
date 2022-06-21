@@ -70,8 +70,8 @@ rcme_sim_plot <- function(rcme_sim_range_object,
                                ggplot2::aes(x = 0,
                                             y = naive_est,
                                             label = "Naive"),
-                               box.padding = unit(0.35, "lines"),
-                               point.padding = unit(0.3, "lines"),
+                               box.padding = ggplot2::unit(0.35, "lines"),
+                               point.padding = ggplot2::unit(0.3, "lines"),
                                alpha = 0.4) +
       ggplot2::guides(fill = guide_legend(override.aes = list(shape = NA)))
 
