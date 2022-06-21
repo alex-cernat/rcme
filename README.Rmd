@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 # rcme - Recounting Crime Measurement Error
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/505738456.svg)](https://zenodo.org/badge/latestdoi/505738456)
 <!-- badges: end -->
 
 The goal of the rcme package is to support the sensitivity analysis of crime data to different types of measurement error. It is result of the [Recounting Crime Project](https://recountingcrime.com/). You can see the publications informing this work [here](https://recountingcrime.com/scientific-articles/).

@@ -4,6 +4,8 @@
 # rcme - Recounting Crime Measurement Error
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/505738456.svg)](https://zenodo.org/badge/latestdoi/505738456)
 <!-- badges: end -->
 
 The goal of the rcme package is to support the sensitivity analysis of
@@ -79,15 +81,15 @@ rcme_ind(
 #> assumed.
 #> $sim_result
 #>      S R_sd D log_var key_predictor    SE
-#> 1 0.31 0.08 0    TRUE         0.242 0.121
-#> 2 0.67 0.08 0    TRUE         0.355 0.147
-#> 3 1.00 0.08 0    TRUE         0.391 0.154
-#> 4 0.31 0.10 0    TRUE         0.167 0.101
-#> 5 0.67 0.10 0    TRUE         0.337 0.143
+#> 1 0.31 0.08 0    TRUE         0.234 0.121
+#> 2 0.67 0.08 0    TRUE         0.358 0.147
+#> 3 1.00 0.08 0    TRUE         0.390 0.154
+#> 4 0.31 0.10 0    TRUE         0.165 0.101
+#> 5 0.67 0.10 0    TRUE         0.334 0.143
 #> 6 1.00 0.10 0    TRUE         0.386 0.153
-#> 7 0.31 0.12 0    TRUE         0.106 0.078
-#> 8 0.67 0.12 0    TRUE         0.311 0.138
-#> 9 1.00 0.12 0    TRUE         0.379 0.152
+#> 7 0.31 0.12 0    TRUE         0.099 0.078
+#> 8 0.67 0.12 0    TRUE         0.310 0.138
+#> 9 1.00 0.12 0    TRUE         0.382 0.152
 #> 
 #> $naive
 #> 
