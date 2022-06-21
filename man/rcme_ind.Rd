@@ -2,7 +2,7 @@
 % Please edit documentation in R/rcme_ind.R
 \name{rcme_ind}
 \alias{rcme_ind}
-\title{Function that simulates the effect of measurement error on an independent variable}
+\title{Function that simulates the effect of measurement error on an independent variable.}
 \usage{
 rcme_ind(formula, data, key_predictor, S = 1, R_sd = 0, D = 0, log_var = FALSE)
 }
@@ -11,16 +11,25 @@ rcme_ind(formula, data, key_predictor, S = 1, R_sd = 0, D = 0, log_var = FALSE)
 
 \item{data}{Data that will be used}
 
-\item{key_predictor}{The key variable of interest in the model}
+\item{key_predictor}{The key independent variable of interest in the model. Only one variable can be used.}
 
-\item{S}{An estimate of counting rate}
+\item{S}{The magnitude of the systematic error component, included as a scalar contained within the (0,1). Users can input multiple values using c().}
 
-\item{R_sd}{Standard deviation}
+\item{R_sd}{The magnitude of the random errors, included as a value of the standard deviation, assumed to be normally distributed with a mean of zero. Users can input multiple values using c().}
 
-\item{D}{Correlation between measurement error and variables of interest}
+\item{D}{The magnitude of the correlation between the measurement error and the key variable of interest. Users can input multiple values using c().}
 
-\item{log_var}{Do you want the function to log the outcome?}
+\item{log_var}{Do you want the function to log the outcome? If log_var = TRUE users must remember that all sensitivity results will be presented on the log scale.}
 }
 \description{
-Function that simulates the effect of measurement error on an independent variable
+Function that simulates the effect of measurement error on an independent variable.
+}
+\examples{
+rcme_ind(
+  formula = "disorder ~ log_violent_crime + white_british + unemployment + median_age",
+  data = crime_disorder,
+  key_predictor = "log_violent_crime",
+  S = 0.31,
+  R_sd = 0.12,
+  D = -0.1)
 }

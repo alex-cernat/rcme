@@ -3,26 +3,32 @@
 \docType{data}
 \name{crime_damage}
 \alias{crime_damage}
-\title{A synthetic data of crime damage.}
+\title{Synthetic data of criminal damage rates and collective efficacy.}
 \format{
 A data frame with 250 rows and 6 variables:
 \describe{
-\item{collective_efficacy}{}
-\item{unemployment}{}
-\item{median_age}{}
-\item{white_british}{}
-\item{damage_crime}{}
-\item{log_damage_crime}{}
+\item{collective_efficacy}{collective efficacy estimates, standardised}
+\item{unemployment}{unemployment rates, standardised}
+\item{median_age}{median age, standardised}
+\item{white_british}{proportion of White British residents, standardised}
+\item{damage_crime}{criminal damage rate per 1,000 pop}
+\item{log_damage_crime}{criminal damage rate per 1,000 pop, log-transformed}
 }
 }
 \source{
-\url{http://www.diamondse.info/}
+\url{https://github.com/alex-cernat/rcme/tree/master/data}
 }
 \usage{
 crime_damage
 }
 \description{
-A dataset containing the prices and other attributes of almost 54,000
-diamonds.
+A dataset containing criminal damage rates, collective efficacy measures
+and other socio-demographic variables for 250 areas.
+}
+\details{
+This dataset was generated following multivariate normal distributions
+to replicate real-world parameters recorded in the UK Census 2011 and
+the Metropolitan Police Service Public Attitudes Survey 2011-2013 at
+the level of Middle layer Super Output Areas (MSOAs) in London.
 }
 \keyword{datasets}

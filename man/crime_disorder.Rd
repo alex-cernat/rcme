@@ -3,26 +3,32 @@
 \docType{data}
 \name{crime_disorder}
 \alias{crime_disorder}
-\title{A synthetic data of crime disorder.}
+\title{Synthetic data of perceived disorder and violent crime rates.}
 \format{
 A data frame with 53940 rows and 10 variables:
 \describe{
-\item{violent_crime}{}
-\item{white_british}{}
-\item{unemployment}{}
-\item{median_age}{}
-\item{disorder}{}
-\item{log_violent_crime}{}
+\item{violent_crime}{violent crime rate per 1,000 pop}
+\item{white_british}{proportion of White British residents, standardised}
+\item{unemployment}{unemployment rates, standardised}
+\item{median_age}{median age, standardised}
+\item{disorder}{perceived disorder estimates, standardised}
+\item{log_violent_crime}{violent crime rate per 1,000 pop, log-transformed}
 }
 }
 \source{
-\url{http://www.diamondse.info/}
+\url{https://github.com/alex-cernat/rcme/tree/master/data}
 }
 \usage{
 crime_disorder
 }
 \description{
-A dataset containing the prices and other attributes of almost 54,000
-diamonds.
+A dataset containing perceived disorder measures, violent crime rates
+and other socio-demographic variables for 250 areas.
+}
+\details{
+This dataset was generated following multivariate normal distributions
+to replicate real-world parameters recorded in the UK Census 2011 and
+the Crime Survey for England and Wales 2011/12 at the level of Local
+Authorities in England and Wales.
 }
 \keyword{datasets}
