@@ -33,7 +33,7 @@ devtools::install_github("alex-cernat/rcme")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to get a corrected regression estimate when we assume ther
 
 ```{r example}
 rcme_ind(
@@ -72,9 +72,10 @@ me.2ex <- rcme_out(
 
 ```
 
+You can also visualize the results of the simulations easily using `rcme_sim_plot()`:
 
 ```{r}
 rcme_sim_plot(me.2ex, ci = T, naive = T)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+

@@ -73,7 +73,7 @@ rcme_sim_plot <- function(rcme_sim_range_object,
                                box.padding = ggplot2::unit(0.35, "lines"),
                                point.padding = ggplot2::unit(0.3, "lines"),
                                alpha = 0.4) +
-      ggplot2::guides(fill = guide_legend(override.aes = list(shape = NA)))
+      ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(shape = NA)))
 
   }
 
