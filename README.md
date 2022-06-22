@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rcme - Recounting Crime Measurement Error <img src="man/figures/logo-nobackground.png" align="right" />
+# rcme - Recounting Crime Measurement Error <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
 
@@ -9,9 +9,10 @@
 <!-- badges: end -->
 
 The goal of the rcme package is to support the sensitivity analysis of
-regression models using crime rates affected by different types of measurement error. 
-It is result of the [Recounting Crime Project](https://recountingcrime.com/). You can see
-the publications informing this work [here](https://recountingcrime.com/scientific-articles/).
+crime data to different types of measurement error. It is result of the
+[Recounting Crime Project](https://recountingcrime.com/). You can see
+the publications informing this work
+[here](https://recountingcrime.com/scientific-articles/).
 
 ## Installation
 
@@ -80,15 +81,15 @@ rcme_ind(
 #> assumed.
 #> $sim_result
 #>      S R_sd D log_var key_predictor    SE
-#> 1 0.31 0.08 0    TRUE         0.236 0.121
-#> 2 0.67 0.08 0    TRUE         0.355 0.147
-#> 3 1.00 0.08 0    TRUE         0.391 0.154
-#> 4 0.31 0.10 0    TRUE         0.164 0.101
-#> 5 0.67 0.10 0    TRUE         0.335 0.143
+#> 1 0.31 0.08 0    TRUE         0.239 0.121
+#> 2 0.67 0.08 0    TRUE         0.356 0.147
+#> 3 1.00 0.08 0    TRUE         0.392 0.154
+#> 4 0.31 0.10 0    TRUE         0.169 0.101
+#> 5 0.67 0.10 0    TRUE         0.337 0.143
 #> 6 1.00 0.10 0    TRUE         0.385 0.153
-#> 7 0.31 0.12 0    TRUE         0.103 0.079
-#> 8 0.67 0.12 0    TRUE         0.313 0.138
-#> 9 1.00 0.12 0    TRUE         0.380 0.152
+#> 7 0.31 0.12 0    TRUE         0.099 0.078
+#> 8 0.67 0.12 0    TRUE         0.310 0.138
+#> 9 1.00 0.12 0    TRUE         0.379 0.152
 #> 
 #> $naive
 #> 
