@@ -52,9 +52,13 @@ rcme_sim_ind <- function(data,
                            paste0(predictors[!predictors %in% key_predictor],
                                   collapse = " + "))
     } else {
-      reg_syntax <- paste0(outcome, " ~ log(adjusted) + ",
-                           paste0(predictors[!predictors %in% key_predictor],
-                                  collapse = " + "))
+      if (length(predictors[!predictors %in% key_predictor]) > 0) {
+        reg_syntax <- paste0(outcome, " ~ log(adjusted) + ", 
+                             paste0(predictors[!predictors %in% key_predictor], 
+                                    collapse = " + "))
+      } else {
+        reg_syntax <- paste0(outcome, " ~ log(adjusted) + ")
+      }
     }
 
 
