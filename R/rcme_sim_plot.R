@@ -35,8 +35,8 @@ rcme_sim_plot <- function(rcme_sim_range_object,
     ggplot2::facet_wrap( ~ S) +
     ggplot2::theme_bw() +
     ggplot2::labs(
-      x = "Correlation between the key predictor and S",
-      y = "Effect of causal variable on outcome",
+      x = "Correlation between key predictor and S",
+      y = "Effect of key predictor on outcome",
       color = "Std. dev. random error",
       fill = "Std. dev. random error",
       linetype = "Std. dev. random error"
