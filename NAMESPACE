@@ -2,7 +2,9 @@
 
 export("%>%")
 export(rcme_ind)
+export(rcme_ind_univar)
 export(rcme_out)
+export(rcme_out_univar)
 export(rcme_sim_ind)
 export(rcme_sim_out)
 export(rcme_sim_plot)

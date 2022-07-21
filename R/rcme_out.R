@@ -22,7 +22,7 @@
 #'   S = 0.29,
 #'   R_sd = 0.12,
 #'   D = -0.3,
-#'   log_var = T)
+#'   log_var = TRUE)
 rcme_out <- function(formula,
                       data,
                       key_predictor, # main predictor of interest

@@ -49,16 +49,16 @@ rcme_sim_ind <- function(data,
 
     if (log_var == FALSE) {
 	 if (length(predictors[!predictors %in% key_predictor]) > 0) {
-        reg_syntax <- paste0(outcome, " ~ adjusted + ", 
-                             paste0(predictors[!predictors %in% key_predictor], 
+        reg_syntax <- paste0(outcome, " ~ adjusted + ",
+                             paste0(predictors[!predictors %in% key_predictor],
                                     collapse = " + "))
       } else {
         reg_syntax <- paste0(outcome, " ~ adjusted")
-      }      
+      }
     } else {
       if (length(predictors[!predictors %in% key_predictor]) > 0) {
-        reg_syntax <- paste0(outcome, " ~ log(adjusted) + ", 
-                             paste0(predictors[!predictors %in% key_predictor], 
+        reg_syntax <- paste0(outcome, " ~ log(adjusted) + ",
+                             paste0(predictors[!predictors %in% key_predictor],
                                     collapse = " + "))
       } else {
         reg_syntax <- paste0(outcome, " ~ log(adjusted)")
